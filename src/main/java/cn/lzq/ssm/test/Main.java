@@ -1,0 +1,26 @@
+package cn.lzq.ssm.test;
+
+import cn.lzq.ssm.mapper.UserMapper;
+import cn.lzq.ssm.po.User;
+import cn.lzq.ssm.service.UserService;
+import cn.lzq.ssm.service.impl.UserServiceImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Created by liuzhiqi on 2016/4/9.
+ */
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
+
+        System.out.println(context.getBean("userService"));
+        UserService userService = (UserService)context.getBean("userService");
+        System.out.println("userService = " + userService);
+        User user = userService.findUserById(1);
+//
+//        System.out.println(user);
+
+    }
+}
