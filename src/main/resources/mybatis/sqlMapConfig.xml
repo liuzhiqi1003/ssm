@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<!-- 加载属性文件 -->
 	<!--<properties resource="db.properties">-->
-		<!--&lt;!&ndash;properties中还可以配置一些属性名和属性值  &ndash;&gt;-->
+		<!--&lt;!&ndash;properties中还可以配置一些属性名和属性值   &ndash;&gt;-->
 		<!--&lt;!&ndash; <property name="jdbc.driver" value=""/> &ndash;&gt;-->
 	<!--</properties>-->
 	<!-- 全局配置参数，需要时再设置 -->
