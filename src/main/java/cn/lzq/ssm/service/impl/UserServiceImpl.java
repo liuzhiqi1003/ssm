@@ -27,4 +27,8 @@ public class UserServiceImpl implements UserService {
 
         return user;
     }
+
+    public void addUser(User user) throws Exception {
+        userMapper.addUser(user);
+    }
 }

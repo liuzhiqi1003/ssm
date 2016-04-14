@@ -9,5 +9,7 @@ public interface UserMapper {
 
     public User findUserById(int id) throws Exception;
 
+    public void addUser(User user) throws Exception;
+
 
 }

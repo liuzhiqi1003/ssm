@@ -8,4 +8,6 @@ import cn.lzq.ssm.po.User;
 public interface UserService {
 
     public User findUserById(int id) throws Exception;
+
+    public void addUser(User user) throws Exception;
 }

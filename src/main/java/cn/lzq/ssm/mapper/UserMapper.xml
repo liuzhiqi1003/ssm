@@ -7,4 +7,8 @@
     <select id="findUserById" parameterType="int" resultType="cn.lzq.ssm.po.User">
         select * from users where id = #{id}
     </select>
+
+    <insert id="addUser" parameterType="user">
+        INSERT INTO users(NAME,age,gender,address) VALUES (#{name},#{age},#{gender},#{address});
+    </insert>
 </mapper>

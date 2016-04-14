@@ -17,10 +17,14 @@ public class Main {
 
         System.out.println(context.getBean("userService"));
         UserService userService = (UserService)context.getBean("userService");
-        System.out.println("userService = " + userService);
-        User user = userService.findUserById(1);
-//
-//        System.out.println(user);
+
+        User user = new User();
+        user.setName("杨过");
+        user.setAge(30);
+        user.setGender("男");
+        user.setAddress("钟南山");
+
+        userService.addUser(user);
 
     }
 }
