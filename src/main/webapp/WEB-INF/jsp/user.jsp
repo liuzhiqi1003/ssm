@@ -12,20 +12,21 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
+    <base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/">
     <title>user</title>
-    <link rel="stylesheet" type="text/css" href="../themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../themes/demo.css">
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="themes/demo.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
 </head>
 <body>
     <h3>User page.</h3>
     <br><br>
     <div style="margin:20px 0;"></div>
-    <div class="easyui-panel" title="New Topic" style="width:400px">
+    <div class="easyui-panel" title="添加用户" style="width:400px">
         <div style="padding:10px 60px 20px 60px">
-            <form id="ff" method="post" action="addUser.action">
+            <form id="ff" method="post" action="user/addUser.action">
                 <table cellpadding="5">
                     <tr>
                         <td>姓名:</td>
@@ -43,9 +44,6 @@
                         <td>地址:</td>
                         <td><input class="easyui-textbox" name="address" data-options="multiline:true" style="height:60px"></input></td>
                     </tr>
-                    <tr>
-                        <input type="submit" value="保存"></input>
-                    </tr>
                 </table>
             </form>
             <div style="text-align:center;padding:5px">
@@ -59,7 +57,6 @@
             $('#ff').form('submit');
         }
         function clearForm(){
-            alert("clear")
             $('#ff').form('clear');
         }
     </script>

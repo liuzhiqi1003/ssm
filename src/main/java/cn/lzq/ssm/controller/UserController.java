@@ -22,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("findUserById.action")
-    public ModelAndView findUserByid (@RequestParam int id) throws Exception{
+    public ModelAndView findUserByid (int id) throws Exception{
         User user = userService.findUserById(id);
         ModelAndView mdv = new ModelAndView();
         mdv.setViewName("user");
@@ -31,14 +31,14 @@ public class UserController {
     }
 
     @RequestMapping("addUser.action")
-    public String addUser (HttpServletRequest request, HttpServletResponse response) throws Exception {
-        User user = new User();
-        String name = (String) request.getAttribute("name");
+    public String addUser (User user) throws Exception {
+        System.out.println("user = " + user);
+        userService.addUser(user);
+        return "user";
+    }
 
-        System.out.println("name = " + name);
-
-//        System.out.println("user = " + user);
-//        userService.addUser(user);
-        return null;
+    @RequestMapping("addUserPage.action")
+    public String addUserPage() throws Exception{
+        return "user";
     }
 }
