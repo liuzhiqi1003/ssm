@@ -29,17 +29,12 @@ public class UserServiceImplTest {
     @Test
     public void testFindUserById() throws Exception {
         User user = userService.findUserById(1);
-        System.out.println("user = " + user);
-    }
-
-    @Test
-    public void testAddUser() throws Exception {
-
+        assertNotNull(user);
     }
 
     @Test
     public void testFindAllUser() throws Exception {
         List<User> allUser = userService.findAllUser();
-        System.out.println("allUser = " + allUser);
+        assertNotNull(allUser);
     }
 }
