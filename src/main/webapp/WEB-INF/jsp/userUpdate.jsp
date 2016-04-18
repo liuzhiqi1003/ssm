@@ -26,23 +26,24 @@
     <div style="margin:20px 0;"></div>
     <div class="easyui-panel" title="添加用户" style="width:400px">
         <div style="padding:10px 60px 20px 60px">
-            <form id="ff" method="post" action="user/addUser.action">
+            <form id="ff" method="post" action="user/updateUser.action">
                 <table cellpadding="5">
+                    <input type="hidden" name="id" value="${user.id}" />
                     <tr>
                         <td>姓名:</td>
-                        <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input></td>
+                        <td><input class="easyui-textbox" type="text" name="name" data-options="required:true" value="${user.name}"/></td>
                     </tr>
                     <tr>
                         <td>年龄:</td>
-                        <td><input class="easyui-textbox" type="text" name="age" data-options="required:true"></input></td>
+                        <td><input class="easyui-textbox" type="text" name="age" data-options="required:true" value="${user.age}"/></td>
                     </tr>
                     <tr>
                         <td>性别:</td>
-                        <td><input class="easyui-textbox" type="text" name="gender" data-options="required:true"></input></td>
+                        <td><input class="easyui-textbox" type="text" name="gender" data-options="required:true" value="${user.gender}"/></td>
                     </tr>
                     <tr>
                         <td>地址:</td>
-                        <td><input class="easyui-textbox" name="address" data-options="multiline:true" style="height:60px"></input></td>
+                        <td><input class="easyui-textbox" name="address" data-options="multiline:true" style="height:60px" value="${user.address}"/></td>
                     </tr>
                 </table>
             </form>

@@ -1,15 +1,15 @@
 package cn.lzq.ssm.controller;
 
+import cn.lzq.ssm.po.ResponJson;
 import cn.lzq.ssm.po.User;
 import cn.lzq.ssm.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by liuzhiqi on 2016/4/9.
@@ -31,14 +31,59 @@ public class UserController {
     }
 
     @RequestMapping("addUser.action")
-    public String addUser (User user) throws Exception {
-        System.out.println("user = " + user);
+    @ResponseBody
+    public ResponJson addUser (User user) throws Exception {
+        ResponJson json = new ResponJson();
+        json.setSuccess(true);
+        json.setCode("000");
+        json.setMsg("操作成功！");
         userService.addUser(user);
-        return "user";
+        return json;
     }
 
     @RequestMapping("addUserPage.action")
     public String addUserPage() throws Exception{
         return "user";
+    }
+
+    @RequestMapping("userListPage.action")
+    public String userListPage() throws Exception{
+        return "userList";
+    }
+
+    @RequestMapping("findAllUser.action")
+    @ResponseBody
+    public List<User> findAllUser() throws Exception{
+        return userService.findAllUser();
+    }
+
+    @RequestMapping("updateUserPage.action")
+    public ModelAndView updateUserPage(int id) throws Exception{
+        ModelAndView mdv = new ModelAndView("userUpdate");
+        User user = userService.findUserById(id);
+        mdv.addObject("user",user);
+        return mdv;
+    }
+
+    @RequestMapping("updateUser.action")
+    @ResponseBody
+    public ResponJson updateUser(User user) throws Exception{
+        userService.updateUser(user);
+        ResponJson json = new ResponJson();
+        json.setSuccess(true);
+        json.setCode("000");
+        json.setMsg("操作成功！");
+        return json;
+    }
+
+    @RequestMapping("deleteUser.action")
+    @ResponseBody
+    public ResponJson deleteUser (int id) throws Exception{
+        ResponJson json = new ResponJson();
+        json.setSuccess(true);
+        json.setCode("000");
+        json.setMsg("操作成功！");
+        userService.deleteUser(id);
+        return json;
     }
 }

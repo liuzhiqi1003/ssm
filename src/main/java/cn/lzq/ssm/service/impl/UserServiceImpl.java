@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by liuzhiqi on 2016/4/9.
@@ -30,5 +31,17 @@ public class UserServiceImpl implements UserService {
 
     public void addUser(User user) throws Exception {
         userMapper.addUser(user);
+    }
+
+    public List<User> findAllUser() throws Exception {
+        return userMapper.findAllUser();
+    }
+
+    public void updateUser(User user) throws Exception {
+        userMapper.updateUser(user);
+    }
+
+    public void deleteUser(int id) throws Exception {
+        userMapper.deleteUser(id);
     }
 }

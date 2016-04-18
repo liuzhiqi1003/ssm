@@ -15,7 +15,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-*.xml");
 
-        System.out.println(context.getBean("userService"));
         UserService userService = (UserService)context.getBean("userService");
 
         User user = new User();

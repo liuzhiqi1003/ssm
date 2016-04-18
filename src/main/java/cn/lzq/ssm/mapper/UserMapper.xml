@@ -11,4 +11,16 @@
     <insert id="addUser" parameterType="user">
         INSERT INTO users(NAME,age,gender,address) VALUES (#{name},#{age},#{gender},#{address});
     </insert>
+
+    <select id="findAllUser" resultType="user">
+        select * from users
+    </select>
+
+    <update id="updateUser" parameterType="user">
+        UPDATE users SET name=#{name},age=#{age},gender=#{gender},address=#{address} WHERE id=#{id};
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
 </mapper>
