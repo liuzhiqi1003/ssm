@@ -1,5 +1,7 @@
 package cn.lzq.ssm.po;
 
+import java.util.Date;
+
 /**
  * Created by liuzhiqi on 2016/3/7.
  */
@@ -11,6 +13,8 @@ public class User {
     public int age;
 
     public String gender;
+
+    public Date birthday;
 
     public String address;
 
@@ -54,6 +58,14 @@ public class User {
         this.address = address;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -61,6 +73,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", gender='" + gender + '\'' +
+                ", birthday='" + birthday + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }

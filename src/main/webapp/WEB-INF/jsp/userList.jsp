@@ -35,8 +35,12 @@
         <tr>
             <th data-options="field:'id',width:80">ID</th>
             <th data-options="field:'name',width:100">姓名</th>
-            <th data-options="field:'age',width:80,align:'right'">年龄</th>
-            <th data-options="field:'gender',width:80,align:'right'">性别</th>
+            <th data-options="field:'age',width:80,align:'center'">年龄</th>
+            <th data-options="field:'gender',width:80,align:'center'">性别</th>
+            <th data-options="field:'birthday',width:200,align:'center',formatter:function(value,row,index){
+                         var unixTimestamp = new Date(value);
+                         return unixTimestamp.toLocaleString();
+                         } ">生日</th>
             <th data-options="field:'address',width:250">地址</th>
         </tr>
         </thead>

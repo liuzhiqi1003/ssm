@@ -37,6 +37,14 @@
      -->
     <mvc:annotation-driven />
 
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" >
+        <property name="converters">
+            <set>
+                <bean class="cn.lzq.ssm.controller.converter.CustomDateConverter"/>
+            </set>
+        </property>
+    </bean>
+
     <!-- 视图解析器
 	解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包
 	 -->
